@@ -1,23 +1,35 @@
+// declare variables-------------------------
 
-function addProduct() {
-    var productName = document.getElementById("productName").value;
-    var productPrice = document.getElementById("productPrice").value;
-    var productDescription = document.getElementById("productDescription").value;
-    var productsList = document.getElementById("products");
+let attempts = 0;
 
-var product = {
-    name: productName,
-    price: productPrice,
-    description: productDescription,
-    };
+let randomNum = Math.floor(Math.random() * 50 + 1);
+console.log(randomNum);
 
-    console.log(product);
-    productsList.innerHTML += `
-        <h2>Name: ${product.name}</h2>
-        <p>Price: $${product.price}</p>
-        <p>Description: ${product.description}</p> `;
-    alert(`Product ${product.name} and price ${product.price} and description ${product.description} `);
-    document.getElementById("productName").value = '';
-    document.getElementById("productPrice").value = '';
-    document.getElementById("productDescription").value = '';
+const guess = document.getElementById("guess");
+const submit = document.getElementById("submit");
+const hint = document.getElementById("hint");
+const attemptsText = document.getElementById("attempts");
+
+// Event listeners------------------------------
+
+submit.addEventListener("click", checkGuess )
+
+function checkGuess  (){
+   const userValue = Number(guess.value);   
+    attempts++;
+    // conditions -------------------------
+    if (userValue == randomNum){
+        console.log("Congratulations! You've guessed it.");
+        hint.textContent = "Congratulations! You've guessed it.";
+    }
+    else if (userValue < randomNum){
+        console.log("too low, try again")
+        hint.textContent = "too low, try a higher number!";
+    }
+    else {
+        console.log("too high, try again")
+        hint.textContent = "too high, try a lower number!";
+    }
+    attemptsText.textContent = "Number of attempts : " +attempts;
+
 }

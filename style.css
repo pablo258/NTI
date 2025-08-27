@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(202, 209, 211);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+div{
+    text-align: center;
+    margin-top: 10%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+input{
+    height: 30px;
+    width: 200px;
+    font-size: large;
+    text-align: center;
+    border-radius: 7px;
+    
+}
+input:focus{
+    outline: none;
+    border: 2px solid darkblue;
+}
+button{
+    padding: 10px 20px;
+    font-size: large;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: 1px none;
+    border-radius: 50px;
+}
+button:hover{
+    background-color: rgb(52, 49, 49);
+}
+.guess2{
+   font-size: large;
+   font-weight: 500;
+   
+}
